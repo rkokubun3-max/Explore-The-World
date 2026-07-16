@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <title>Country</title>
+  </head>
+  <body>
+    <section id="search-bar">
+      <div class="container search-layout">
+        <h1>Explore the World</h1>
+        <p>
+          Discover countries, capitals and cultures across
+          <span class="blue-text">40</span> nations
+        </p>
+        <form action="/search" method="post">
+          <input
+            type="text"
+            name="answer"
+            placeholder="Search for a country by name..."
+          />
+        </form>
+      </div>
+    </section>
+    <section id="detail">
+      <div class="container detail-layout">
+        <div class="detail-box detail-name">
+          <h2>Official Name</h2>
+          <p><%= result.names.official %></p>
+        </div>
+        <div
+          class="detail-box detail-flag"
+          style="background-image: url(&quot;<%= result.flag.url_svg %>&quot;)"
+        ></div>
+        <div class="detail-box detail-pop">
+          <h2>Population</h2>
+          <p><%= result.population %> people</p>
+        </div>
+        <div class="detail-box detail-cap">
+          <h2>Capital</h2>
+          <p><%= result.capitals[0].name %></p>
+        </div>
+        <div class="detail-box detail-language">
+          <h2>Language</h2>
+          <p>
+            <%= result.languages[0].name %> <%= result.languages[0].native_name
+            %>
+          </p>
+        </div>
+        <div class="detail-box detail-currency">
+          <h2>Currency</h2>
+          <p>
+            <%= result.currencies[0].name %> <%= result.currencies[0].symbol %>
+          </p>
+        </div>
+        <div class="detail-box detail-region">
+          <h2>Region</h2>
+          <p><%= result.region %></p>
+        </div>
+        <div class="detail-box detail-subregion">
+          <h2>Subregion</h2>
+          <p><%= result.subregion %></p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
