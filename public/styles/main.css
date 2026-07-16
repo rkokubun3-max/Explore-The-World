@@ -99,3 +99,11 @@ input {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+@media (max-width: 768px) {
+  .detail-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
